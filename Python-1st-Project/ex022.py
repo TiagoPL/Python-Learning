@@ -1,0 +1,6 @@
+nome = input('Digite seu nome completo: ')
+nomelista = nome.split()
+print(nome.upper())
+print(nome.lower())
+print(f'O nome tem {len(nome.replace(" ", ""))} letras.')
+print(f'O primeiro nome tem {len(nomelista[0])} letas.')
