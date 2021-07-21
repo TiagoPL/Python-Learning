@@ -1,26 +1,10 @@
-from collections import Counter
-
-
 def checkMagazine(magazine, note):
-    a = Counter(magazine)
-    b = Counter(note)
-
-    for word, number in b.items():
-        if word not in a:
-            print('No')
-            return
-        elif number > a[word]:
-            print('No')
-            return
-    print('Yes')
+    
 
 
 
 
-    # if (a & b) == b:
-    #     print('Yes')
-    # else:
-    #     print("No")
+
 
 
 magazine = ['give', 'me', 'one', 'grand', 'today', 'night']
