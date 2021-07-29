@@ -1,18 +1,5 @@
 def countTriplets(array, ratio):
-    answer = 0
-    dictionary = {}
-    dictionary_pairs = {}
-
-    for number in reversed(array):
-        if number * ratio in dictionary_pairs:
-            answer += dictionary_pairs[number * ratio]
-
-        if number * ratio in dictionary:
-            dictionary_pairs[number] = dictionary_pairs.get(number, 0) + dictionary[number * ratio]
-
-        dictionary[number] = dictionary.get(number, 0) + 1
-
-    return answer
+    pass
 
 
 r = 2

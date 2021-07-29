@@ -1,11 +1,13 @@
 def twoStrings(s1, s2):
-    answer = 'NO'
+    s1 = set(s1)
+    s2 = set(s2)
 
     for letter in s1:
         for other_letter in s2:
             if other_letter == letter:
-                answer = 'YES'
-    return answer
+                return 'YES'
+
+    return 'NO'
 
 
 s1 = 'hello'
