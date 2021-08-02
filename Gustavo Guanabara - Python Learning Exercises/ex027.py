@@ -1,5 +1,0 @@
-nome = input('Qual o seu nome completo? ').strip().title()
-lista = nome.split()
-print(f'Prazer te conhecer {lista[0]}!')
-print(f'Seu primeiro nome é {lista[0]}.')
-print(f'Seu ultimo nome é {lista[len(lista)-1]}.')

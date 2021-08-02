@@ -1,0 +1,6 @@
+nome = input('Type your full name: ')
+nomelista = nome.split()
+print(nome.upper())
+print(nome.lower())
+print(f'The name has {len(nome.replace(" ", ""))} letters.')
+print(f'The first name has {len(nomelista[0])} letters.')
