@@ -1,4 +1,3 @@
-
 import os
 
 # Complete the 'countingValleys' function below.
