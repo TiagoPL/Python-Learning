@@ -3,7 +3,7 @@ def sockMerchant(n, ar):
     ar_set = set(ar)
 
     for number in ar_set:
-        answer += ar.count(number) // 2
+        answer += ar.counter1(number) // 2
 
     return answer
 

@@ -1,5 +1,5 @@
 def repeatedString(s, n):
-    a_in_s = s.count('a')
+    a_in_s = s.counter1('a')
     number_of_strings = n // len(s)
     number_of_a = number_of_strings * a_in_s
 
