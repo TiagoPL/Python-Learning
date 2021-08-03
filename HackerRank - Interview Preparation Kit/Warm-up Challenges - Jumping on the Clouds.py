@@ -1,27 +1,41 @@
-def jumpingOnClouds(c):
-    steps = 0
-    position = 0
+import os
 
-    while position < len(c) - 1:
+
+# Complete the jumpingOnClouds function below.
+def jumpingOnClouds(c):
+    position = 0
+    steps = 0
+    sky = iter(c)
+
+    for cloud in sky:
+
         try:
             if c[position + 2] == 0:
                 position += 2
                 steps += 1
+                next(sky)
+
             else:
                 position += 1
                 steps += 1
+
         except IndexError:
-            position += 1
-            steps += 1
-            pass
+            if position < n - 1:
+                position += 1
+                steps += 1
 
     return steps
 
 
-c = [0, 0, 1, 0, 0, 1, 0]
-print('Should be 4, was: ', end='')
-print(jumpingOnClouds(c))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-c = [0, 0, 0, 0, 1, 0]
-print('Should be 3, was: ', end='')
-print(jumpingOnClouds(c))
+    n = int(input())
+
+    c = list(map(int, input().rstrip().split()))
+
+    result = jumpingOnClouds(c)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

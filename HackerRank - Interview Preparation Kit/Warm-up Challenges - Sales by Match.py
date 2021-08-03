@@ -1,14 +1,26 @@
+import os
+
+
+# Complete the sockMerchant function below.
 def sockMerchant(n, ar):
     answer = 0
     ar_set = set(ar)
 
     for number in ar_set:
-        answer += ar.counter1(number) // 2
+        answer += ar.count(number) // 2
 
     return answer
 
 
-n = 9
-ar = [10, 20, 20, 10, 10, 30, 50, 10, 20]
-result = sockMerchant(n, ar)
-print(result)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = sockMerchant(n, ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

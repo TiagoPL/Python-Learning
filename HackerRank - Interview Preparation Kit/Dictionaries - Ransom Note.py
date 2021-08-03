@@ -1,30 +1,29 @@
 from collections import Counter
 
-def checkMagazine(magazine, note):
-    magazine_dict = Counter(magazine)
 
-    for word in note:
-        if word in magazine_dict.keys():
-            magazine_dict[word] -= 1
-            if magazine_dict[word] == 0:
-                magazine_dict.pop(word)
-        else:
+def checkMagazine(magazine, note):
+    a = Counter(magazine)
+    b = Counter(note)
+
+    for word, number in b.items():
+        if word not in a:
+            print('No')
+            return
+        elif number > a[word]:
             print('No')
             return
     print('Yes')
 
 
-magazine = ['give', 'me', 'one', 'grand', 'today', 'night']
-note = ['give', 'one', 'grand', 'today']
-print(f'Should be "Yes", was: ', end='')
-checkMagazine(magazine, note)
+if __name__ == '__main__':
+    mn = input().split()
 
-magazine = ['two', 'times', 'three', 'is', 'not', 'four']
-note = ['two', 'times', 'two', 'is', 'four']
-print(f'Should be "No",  was: ', end='')
-checkMagazine(magazine, note)
+    m = int(mn[0])
 
-magazine = ['ive', 'got', 'a', 'lovely', 'bunch', 'of', 'coconuts']
-note = ['ive', 'got', 'some', 'coconuts']
-print(f'Should be "No",  was: ', end='')
-checkMagazine(magazine, note)
+    n = int(mn[1])
+
+    magazine = input().rstrip().split()
+
+    note = input().rstrip().split()
+
+    checkMagazine(magazine, note)

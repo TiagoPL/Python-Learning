@@ -1,27 +1,35 @@
+import os
+
+
+# Complete the repeatedString function below.
 def repeatedString(s, n):
-    a_in_s = s.counter1('a')
-    number_of_strings = n // len(s)
-    number_of_a = number_of_strings * a_in_s
+    a_in_string = 0
+    total_a = 0
+    for letter in s:
+        if letter == 'a':
+            a_in_string += 1
 
-    partial_string_size = n % len(s)
-    for position in range(0, partial_string_size):
-        if s[position] == 'a':
-            number_of_a += 1
+    clean_ones = n // len(s)
+    clean_add = clean_ones * a_in_string
+    total_a += clean_add
 
-    return number_of_a
+    letters_left = n % len(s)
+    for letter in range(0, letters_left):
+        if s[letter] == 'a':
+            total_a += 1
+
+    return total_a
 
 
-s = 'aba'
-n = 10
-print('Should be 7, was: ', end='')
-print(repeatedString(s, n))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-s = 'a'
-n = 1000000000000
-print('Should be 1000000000000, was: ', end='')
-print(repeatedString(s, n))
+    s = input()
 
-s = 'abcac'
-n = 10
-print('Should be 4, was: ', end='')
-print(repeatedString(s, n))
+    n = int(input())
+
+    result = repeatedString(s, n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

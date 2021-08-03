@@ -1,3 +1,7 @@
+import os
+
+
+# Complete the hourglassSum function below.
 def hourglassSum(arr):
     higher = None
     for line in range(0, 4):
@@ -14,13 +18,16 @@ def hourglassSum(arr):
     return higher
 
 
-arr = [
-    [1, 1, 1, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0],
-    [1, 1, 1, 0, 0, 0],
-    [0, 0, 2, 4, 4, 0],
-    [0, 0, 0, 2, 0, 0],
-    [0, 0, 1, 2, 4, 0]
-    ]
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-print(f' Should be 19, was {hourglassSum(arr)}')
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = hourglassSum(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

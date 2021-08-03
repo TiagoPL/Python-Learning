@@ -1,29 +1,33 @@
+import os
+
+
+# Complete the rotLeft function below.
 def rotLeft(a, d):
-    temp_list = []
+    list_copy = []
+    list_copy.append(a[n - 1])
 
-    if d > len(a):
-        d = d % len(a)
+    for rotations in range(0, d):
+        list_copy.append(a[rotations])
+    for rest in range(n - 2, d - 1, -1):
+        list_copy.insert(0, a[rest])
 
-    for item in range(0, d):
-        temp_list.append(a[item])
-
-    for item in range(0, d):
-        a.pop(0)
-
-    for item in temp_list:
-        a.append(item)
-
-    return a
+    return list_copy
 
 
-d = 4
-a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-result = rotLeft(a, d)
-print(result)
+    nd = input().split()
 
-d = 34
-a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    n = int(nd[0])
 
-result = rotLeft(a, d)
-print(result)
+    d = int(nd[1])
+
+    a = list(map(int, input().rstrip().split()))
+
+    result = rotLeft(a, d)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
